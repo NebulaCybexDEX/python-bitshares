@@ -42,9 +42,9 @@ class Price(dict):
 
         This allows instanciations like:
 
-        * ``Price("0.315 USD/BTS")``
-        * ``Price(0.315, base="USD", quote="BTS")``
-        * ``Price(0.315, base=Asset("USD"), quote=Asset("BTS"))``
+        * ``Price("0.315 USD/CYB")``
+        * ``Price(0.315, base="USD", quote="CYB")``
+        * ``Price(0.315, base=Asset("USD"), quote=Asset("CYB"))``
         * ``Price({"base": {"amount": 1, "asset_id": "1.3.0"}, "quote": {"amount": 10, "asset_id": "1.3.106"}})``
         * ``Price({"receives": {"amount": 1, "asset_id": "1.3.0"}, "pays": {"amount": 10, "asset_id": "1.3.106"}}, base_asset=Asset("1.3.0"))``
         * ``Price(quote="10 GOLD", base="1 USD")``
@@ -58,8 +58,8 @@ class Price(dict):
         .. code-block:: python
 
             >>> from bitshares.price import Price
-            >>> Price("0.3314 USD/BTS") * 2
-            0.662600000 USD/BTS
+            >>> Price("0.3314 USD/CYB") * 2
+            0.662600000 USD/CYB
 
     """
     def __init__(
@@ -206,7 +206,7 @@ class Price(dict):
             raise InvalidAssetException
 
     def invert(self):
-        """ Invert the price (e.g. go from ``USD/BTS`` into ``BTS/USD``)
+        """ Invert the price (e.g. go from ``USD/CYB`` into ``CYB/USD``)
         """
         tmp = self["quote"]
         self["quote"] = self["base"]

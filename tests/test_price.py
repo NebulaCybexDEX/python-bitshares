@@ -19,10 +19,10 @@ class Testcases(unittest.TestCase):
     def test_init(self):
         # self.assertEqual(1, 1)
 
-        Price("0.315 USD/BTS")
+        Price("0.315 USD/CYB")
         Price(1.0, "USD/GOLD")
-        Price(0.315, base="USD", quote="BTS")
-        Price(0.315, base=Asset("USD"), quote=Asset("BTS"))
+        Price(0.315, base="USD", quote="CYB")
+        Price(0.315, base=Asset("USD"), quote=Asset("CYB"))
         Price({
             "base": {"amount": 1, "asset_id": "1.3.0"},
             "quote": {"amount": 10, "asset_id": "1.3.106"}})

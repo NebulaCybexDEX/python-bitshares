@@ -81,10 +81,10 @@ Quickstart
 .. code-block:: python
 
    from bitshares.market import Market
-   market = Market("USD:BTS")
+   market = Market("USD:CYB")
    print(market.ticker())
    market.bitshares.wallet.unlock("wallet-passphrase")
-   print(market.sell(300, 100)  # sell 100 USD for 300 BTS/USD
+   print(market.sell(300, 100)  # sell 100 USD for 300 CYB/USD
 
 .. code-block:: python
 

@@ -31,7 +31,7 @@ class Market(dict):
         * ``base-quote`` separated with ``-``
 
         .. note:: Throughout this library, the ``quote`` symbol will be
-                  presented first (e.g. ``USD:BTS`` with ``USD`` being the
+                  presented first (e.g. ``USD:CYB`` with ``USD`` being the
                   quote), while the ``base`` only refers to a secondary asset
                   for a trade. This means, if you call
                   :func:`bitshares.market.Market.sell` or
@@ -63,7 +63,7 @@ class Market(dict):
             raise ValueError("Unknown Market Format: %s" % str(args))
 
     def get_string(self, separator=":"):
-        """ Return a formated string that identifies the market, e.g. ``USD:BTS``
+        """ Return a formated string that identifies the market, e.g. ``USD:CYB``
 
             :param str separator: The separator of the assets (defaults to ``:``)
         """
@@ -97,7 +97,7 @@ class Market(dict):
             * ``quoteVolume``: Volume of the quote asset
             * ``percentChange``: 24h change percentage (in %)
             * ``settlement_price``: Settlement Price for borrow/settlement
-            * ``core_exchange_rate``: Core exchange rate for payment of fee in non-BTS asset
+            * ``core_exchange_rate``: Core exchange rate for payment of fee in non-CYB asset
             * ``price24h``: the price 24h ago
 
             Sample Output:
@@ -185,7 +185,7 @@ class Market(dict):
             .. code-block:: js
 
                 {
-                    "BTS": 361666.63617,
+                    "CYB": 361666.63617,
                     "USD": 1087.0
                 }
 
@@ -209,16 +209,16 @@ class Market(dict):
 
             .. code-block:: js
 
-                {'bids': [0.003679 USD/BTS (1.9103 USD|519.29602 BTS),
-                0.003676 USD/BTS (299.9997 USD|81606.16394 BTS),
-                0.003665 USD/BTS (288.4618 USD|78706.21881 BTS),
-                0.003665 USD/BTS (3.5285 USD|962.74409 BTS),
-                0.003665 USD/BTS (72.5474 USD|19794.41299 BTS)],
-                'asks': [0.003738 USD/BTS (36.4715 USD|9756.17339 BTS),
-                0.003738 USD/BTS (18.6915 USD|5000.00000 BTS),
-                0.003742 USD/BTS (182.6881 USD|48820.22081 BTS),
-                0.003772 USD/BTS (4.5200 USD|1198.14798 BTS),
-                0.003799 USD/BTS (148.4975 USD|39086.59741 BTS)]}
+                {'bids': [0.003679 USD/CYB (1.9103 USD|519.29602 CYB),
+                0.003676 USD/CYB (299.9997 USD|81606.16394 CYB),
+                0.003665 USD/CYB (288.4618 USD|78706.21881 CYB),
+                0.003665 USD/CYB (3.5285 USD|962.74409 CYB),
+                0.003665 USD/CYB (72.5474 USD|19794.41299 CYB)],
+                'asks': [0.003738 USD/CYB (36.4715 USD|9756.17339 CYB),
+                0.003738 USD/CYB (18.6915 USD|5000.00000 CYB),
+                0.003742 USD/CYB (182.6881 USD|48820.22081 CYB),
+                0.003772 USD/CYB (4.5200 USD|1198.14798 CYB),
+                0.003799 USD/CYB (148.4975 USD|39086.59741 CYB)]}
 
 
             .. note:: Each bid is an instance of
@@ -368,15 +368,15 @@ class Market(dict):
                                         the head/irreversible block and add the key "orderid" to the tx output
 
             Prices/Rates are denoted in 'base', i.e. the USD_BTS market
-            is priced in BTS per USD.
+            is priced in CYB per USD.
 
             **Example:** in the USD_BTS market, a price of 300 means
-            a USD is worth 300 BTS
+            a USD is worth 300 CYB
 
             .. note::
 
                 All prices returned are in the **reversed** orientation as the
-                market. I.e. in the BTC/BTS market, prices are BTS per BTC.
+                market. I.e. in the BTC/CYB market, prices are CYB per BTC.
                 That way you can multiply prices with `1.05` to get a +5%.
 
             .. warning::
@@ -387,8 +387,8 @@ class Market(dict):
                 buy asset than you placed the order
                 for. Example:
 
-                    * You place and order to buy 10 USD for 100 BTS/USD
-                    * This means that you actually place a sell order for 1000 BTS in order to obtain **at least** 10 USD
+                    * You place and order to buy 10 USD for 100 CYB/USD
+                    * This means that you actually place a sell order for 1000 CYB in order to obtain **at least** 10 USD
                     * If an order on the market exists that sells USD for cheaper, you will end up with more than 10 USD
         """
         if not expiration:
@@ -459,15 +459,15 @@ class Market(dict):
                                         the head/irreversible block and add the key "orderid" to the tx output
 
             Prices/Rates are denoted in 'base', i.e. the USD_BTS market
-            is priced in BTS per USD.
+            is priced in CYB per USD.
 
             **Example:** in the USD_BTS market, a price of 300 means
-            a USD is worth 300 BTS
+            a USD is worth 300 CYB
 
             .. note::
 
                 All prices returned are in the **reversed** orientation as the
-                market. I.e. in the BTC/BTS market, prices are BTS per BTC.
+                market. I.e. in the BTC/CYB market, prices are CYB per BTC.
                 That way you can multiply prices with `1.05` to get a +5%.
         """
         if not expiration:

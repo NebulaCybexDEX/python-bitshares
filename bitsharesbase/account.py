@@ -48,7 +48,7 @@ class Address(GPHAddress):
 
         :param str address: Base58 encoded address (defaults to ``None``)
         :param str pubkey: Base58 encoded pubkey (defaults to ``None``)
-        :param str prefix: Network prefix (defaults to ``BTS``)
+        :param str prefix: Network prefix (defaults to ``CYB``)
 
         Example::
 
@@ -57,7 +57,7 @@ class Address(GPHAddress):
     """
     def __init__(self, *args, **kwargs):
         if "prefix" not in kwargs:
-            kwargs["prefix"] = "BTS"  # make prefix BTS
+            kwargs["prefix"] = "CYB"  # make prefix CYB
         super(Address, self).__init__(*args, **kwargs)
 
 
@@ -65,7 +65,7 @@ class PublicKey(GPHPublicKey):
     """ This class deals with Public Keys and inherits ``Address``.
 
         :param str pk: Base58 encoded public key
-        :param str prefix: Network prefix (defaults to ``BTS``)
+        :param str prefix: Network prefix (defaults to ``CYB``)
 
         Example:::
 
@@ -80,7 +80,7 @@ class PublicKey(GPHPublicKey):
     """
     def __init__(self, *args, **kwargs):
         if "prefix" not in kwargs:
-            kwargs["prefix"] = "BTS"  # make prefix BTS
+            kwargs["prefix"] = "CYB"  # make prefix CYB
         super(PublicKey, self).__init__(*args, **kwargs)
 
 
@@ -89,7 +89,7 @@ class PrivateKey(GPHPrivateKey):
         constructs two instances of ``PublicKey``:
 
         :param str wif: Base58check-encoded wif key
-        :param str prefix: Network prefix (defaults to ``BTS``)
+        :param str prefix: Network prefix (defaults to ``CYB``)
 
         Example:::
 
@@ -109,5 +109,5 @@ class PrivateKey(GPHPrivateKey):
     """
     def __init__(self, *args, **kwargs):
         if "prefix" not in kwargs:
-            kwargs["prefix"] = "BTS"  # make prefix BTS
+            kwargs["prefix"] = "CYB"  # make prefix CYB
         super(PrivateKey, self).__init__(*args, **kwargs)

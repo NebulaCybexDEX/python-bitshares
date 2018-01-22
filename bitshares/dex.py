@@ -67,7 +67,7 @@ class Dex():
             .. code-block: js
 
                 {'USD': {'collateral': '865893.75000',
-                         'collateral_asset': 'BTS',
+                         'collateral_asset': 'CYB',
                          'debt': 120.00000}
 
         """

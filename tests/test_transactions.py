@@ -15,7 +15,7 @@ from binascii import hexlify
 
 TEST_AGAINST_CLI_WALLET = False
 
-prefix = "BTS"
+prefix = "CYB"
 wif = "5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"
 ref_block_num = 34294
 ref_block_prefix = 3707022213
@@ -265,7 +265,7 @@ class Testcases(unittest.TestCase):
                     [1, {"asset": "1.3.127",
                          "num_top_holders": 10}]
             },
-            "prefix": "BTS"
+            "prefix": "CYB"
         })
         self.cm = ("f68585abf4dce7c804570105f26416000000000000211b03000b666f"
                    "6f6261722d6631323401000000000202fe8cc11cc8251de6977636b5"
@@ -308,7 +308,7 @@ class Testcases(unittest.TestCase):
                             "extensions": []
                             },
             "extensions": {},
-            "prefix": "BTS"
+            "prefix": "CYB"
         })
         self.cm = ("f68585abf4dce7c804570106f264160000000000000"
                    "f010100000001d6ee0501000102fe8cc11cc8251de6"
@@ -515,7 +515,7 @@ class Testcases(unittest.TestCase):
             operations=ops
         )
         tx = tx.sign([wif], chain=prefix)
-        tx.verify([PrivateKey(wif).pubkey], "BTS")
+        tx.verify([PrivateKey(wif).pubkey], "CYB")
         txWire = hexlify(bytes(tx)).decode("ascii")
         print("=" * 80)
         pprint(tx.json())
